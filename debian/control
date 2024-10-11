@@ -1,15 +1,24 @@
-Source: template-repository
-Section: unknown
+Source: golang-gomemcache
+Section: golang
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Tim Potter <tpot@hpe.com>,
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+Standards-Version: 4.6.2
+Homepage: https://github.com/bradfitz/gomemcache
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-gomemcache
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-gomemcache.git
+XS-Go-Import-Path: github.com/bradfitz/gomemcache
+Rules-Requires-Root: no
+Testsuite: autopkgtest-pkg-go
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: golang-github-bradfitz-gomemcache-dev
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Multi-Arch: foreign
+Description: Go memcached client library
+ gomemcache is a memcache client library for the Go programming
+ language.
